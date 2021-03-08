@@ -4,7 +4,7 @@ This is a demo DRL respository to discover interesting phenomena with typical DR
 The DRL frameworsk used is [Stable Baselines(v2.10.0)](https://stable-baselines.readthedocs.io/en/master/).
 
 
-### 2. Deployments
+### 2. 环境配置
 
 * `sudo apt-get update && sudo apt-get install cmake libopenmpi-dev python3-dev zlib1g-dev`
 
@@ -32,14 +32,14 @@ c.NotebookApp.port = 8888  # 设置端口8888，也可用其他的，比如1080�
     * 激活虚拟环境，将环境写入notebook的kernel中,`python -m ipykernel install --user --name grid --display-name grid`
 
 
-### Directories AND Files
+### 3. 目录文件
 
 ```
 ├── Readme.md                      // help
 ├── myenv                          
 |   ├── grid_world.py              // customized environments(MyRandomGridWorld-1,2,3)
 |   ├── __init__.py                // registries
-├── saved                          // the saved files for analysis
+├── override                       // modified files of sb to collect necessary info 
 |
 │── command.sh                     // examples of command
 |
@@ -55,3 +55,14 @@ c.NotebookApp.port = 8888  # 设置端口8888，也可用其他的，比如1080�
 
 ```
 
+### 4. 示例命令
+
+1. 在MyRandomGridWorld-v2环境中利用PPO1训练：`python main.py --method PPO1 --timeSteps 50000` 
+2. 在MyRandomGridWorld-v1环境中利用PPO1训练：`python main.py --envName MyRandomGridWorld-v1 --method PPO1  --timeSteps 50000`
+3. 在MyRandomGridWorld-v1环境中利用PPO1训练：`python main.py --envName MyRandomGridWorld-v3 --method PPO1  --timeSteps 50000`
+
+说明：每一次命令分别对应10个不同种子的结果，结果的图会保存在saved/PPO1文件夹中。若要对3个环境的结果进行比较，需要运行jupyter notebook中的命令，结果也会以图片形式保存下来。
+
+### 5. 可视化游戏
+
+需要以`xvfb-run -s "-screen 0 1400x900x24" jupyter notebook`命令启动jupyter notebook。
