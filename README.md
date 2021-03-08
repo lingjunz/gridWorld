@@ -21,6 +21,11 @@ c.NotebookApp.ip = '*' # 开启所有的IP访问，即可使用远程访问
 c.NotebookApp.open_browser = False # 关闭启动后的自动开启浏览器
 c.NotebookApp.port = 8888  # 设置端口8888，也可用其他的，比如1080，8080等等
 ```
+* 创建conda虚拟环境，配置ipykernel
+    * 导出已有环境：在虚拟环境中执行`conda env export > grid.yaml`
+    * 根据导出文件创建环境：`conda env create -f environment.yaml`
+
+
 
 
 ### Directories AND Files
