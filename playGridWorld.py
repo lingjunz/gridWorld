@@ -4,7 +4,10 @@ import joblib
 import numpy as np
 from IPython import display
 import matplotlib.pyplot as plt
-from stable_baselines import PPO2,PPO1,DQN
+from override.ppo2 import PPO2
+from override.pposgd_simple import PPO1
+from override.dqn import DQN
+
 
 # %matplotlib inline
 from utils import analysis_trajectory
