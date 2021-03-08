@@ -65,4 +65,7 @@ c.NotebookApp.port = 8888  # 设置端口8888，也可用其他的，比如1080�
 
 ### 5. 可视化游戏
 
+* `sudo apt-get install python-opengl xvfb`
+
 需要以`xvfb-run -s "-screen 0 1400x900x24" jupyter notebook`命令启动jupyter notebook。
+或者`xvfb-run --auto-servernum --server-num=1 jupyter notebook`,如果上面的没法运行。
